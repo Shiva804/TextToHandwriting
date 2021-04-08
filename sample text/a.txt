@@ -1,11 +1,20 @@
-Question    Explain the discretionary access control, 
+*M Shiva Sharvesh#
+*311018104079
+
+#Question:	    
+
+Explain the discretionary access control, 
 mandatory access control, roll based access control in 
 brief.
+
+*Answer:
+
 In brief, access control is used to identify an individual is used to paste
-who does a specific job, authenticate them, and then 
+who does a specific job,authenticate them, and then 
 proceed to give that individual only the key to the door or
 workstation that they need access to and nothing more.
-1. Discretionary Access Control (DAC)
+
+*1. Discretionary Access Control (DAC)
 Discretionary Access Control is a type of access control 
 system that holds the business owner responsible for 
 deciding which people are allowed in a specific location, 
@@ -18,9 +27,10 @@ The drawback to Discretionary Access Control is the fact
 that it gives the end-user complete control to set 
 security level settings for other users and the 
 permissions given to the end-user are inherited into other 
-programs they use which could potentially lead to malware 
+programs they use which could potentially lead to malware
 being executed without the end-user being aware of it.
-2. Mandatory Access Control (MAC)
+
+*2. Mandatory Access Control (MAC)
 Mandatory Access Control is more commonly utilized in 
 organizations that require an elevated emphasis on the 
 confidentiality and classification of data (ie. military 
