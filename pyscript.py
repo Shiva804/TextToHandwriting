@@ -7,18 +7,19 @@ import os
 
 
 
-s = input('Enter text')
+s = input('Select paper type: ')
 
 
 
 def text_process(x_axis,y_axis,filetype):
-    final_images = []
+    
     image  = Image.open(filetype)
     draw  = ImageDraw.Draw(image)
 
-    fontlist = ['./fonts/Fontsah.ttf','./fonts/handw.ttf'] #array of fonts
+    fontlist = ['./fonts/Fontsah.ttf','./fonts/handw.ttf','./fonts/Fontsah.ttf'] #array of fonts
     
     fontname = random.choice(fontlist) #select a random font from the array
+    
 
     font = ImageFont.truetype(fontname,40) #assign the font
 
@@ -56,8 +57,7 @@ def text_process(x_axis,y_axis,filetype):
 
             if('*' in word[i]):
                     word = word[1:]
-                    print(word)
-
+                   
             if(idx>=0):
                 while(i < len(word)):
                     ast =  word[i]
@@ -90,7 +90,6 @@ def text_process(x_axis,y_axis,filetype):
                 if(x>=1005):
                     if(y>=1590):
                         image.save("./output images/"+"img"+str(p)+'.png')
-                        final_images.append("./output images/"+"img"+str(p)+'.png')
                         image  = Image.open(filetype)
                         draw  = ImageDraw.Draw(image)
 
@@ -111,7 +110,6 @@ def text_process(x_axis,y_axis,filetype):
         if(len(a_data)==0):
             if(y>=1590):
                 image.save("./output images/"+"img"+str(p)+'.png')
-                final_images.append("./output images/"+"img"+str(p)+'.png')
 
                 image  = Image.open(filetype)
                 draw  = ImageDraw.Draw(image)
@@ -123,16 +121,14 @@ def text_process(x_axis,y_axis,filetype):
                 x=x_axis
 
     image.save("./output images/"+"img"+str(p)+'.png')
-    final_images.append("./output images/"+"img"+str(p)+'.png')
 
-    return final_images
     
 
 
 
 
 
-def img_to_pdf(images_list):
+def img_to_pdf():
     os.chdir('output images')
     
     k = False
@@ -154,7 +150,7 @@ def img_to_pdf(images_list):
 
     
 
-if(s=='standard'):
+if(s=='ruled'):
 
     x=200
     y=165
@@ -168,6 +164,6 @@ else:
 
 
 
-images  = text_process(x,y,filetype)
+text_process(x,y,filetype)
 
-img_to_pdf(images)
+img_to_pdf()
