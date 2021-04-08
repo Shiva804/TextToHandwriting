@@ -7,11 +7,12 @@ import os
 
 
 
-s = input('Select paper type: ')
+paper_type = input('Select paper type (ruled or unruled): ')
+
+text_file = input("Enter File Name (Ex: hello.txt): ")
 
 
-
-def text_process(x_axis,y_axis,filetype):
+def text_process(x_axis,y_axis,filetype,text_file):
     
     image  = Image.open(filetype)
     draw  = ImageDraw.Draw(image)
@@ -23,7 +24,7 @@ def text_process(x_axis,y_axis,filetype):
 
     font = ImageFont.truetype(fontname,40) #assign the font
 
-    read_text = open('./sample text/a.txt')
+    read_text = open('./sample text/'+text_file)
     data = read_text.read()
 
 
@@ -38,7 +39,7 @@ def text_process(x_axis,y_axis,filetype):
     x=x_axis
     y=y_axis
     f=False
-    read_text = open('./sample text/a.txt')
+    read_text = open('./sample text/'+text_file)
     while c<nol:
         rawdata = read_text.readline()
         
@@ -150,7 +151,7 @@ def img_to_pdf():
 
     
 
-if(s=='ruled'):
+if(paper_type=='ruled'):
 
     x=200
     y=165
@@ -164,6 +165,6 @@ else:
 
 
 
-text_process(x,y,filetype)
+text_process(x,y,filetype,text_file)
 
 img_to_pdf()
